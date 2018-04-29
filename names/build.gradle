@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.webservices'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+        compile "org.apache.cxf:cxf-rt-frontend-jaxws:3.0.1"
+	compile "org.apache.cxf:cxf-rt-transports-http:3.0.1"
+	//compile "org.springframework:spring-beans:4.0.6.RELEASE"
+	//compile "org.springframework:spring-context:4.0.6.RELEASE"
+	//compile "org.springframework:spring-web:4.0.6.RELEASE"
+	//compile "javax.servlet:javax.servlet-api:3.1.0"
+    }

@@ -1,0 +1,36 @@
+package com.webservices.names.ws;
+
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
+
+/**
+ *
+ * @author USER
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+    private final static QName _id_QNAME = new QName("http://www.webservices.names.ws/modelRequest", "id");
+    private final static QName _document_QNAME = new QName("http://www.webservices.names.ws/modelRequest", "document");
+
+    public ObjectFactory() {
+    }
+
+    public ModelRequest createModelRequest() {
+        return new ModelRequest();
+    }
+
+    @XmlElementDecl(namespace = "http://www.webservices.names.ws/modelRequest", name = "id")
+    public JAXBElement<String> createid(String value) {
+        return new JAXBElement<>(_id_QNAME, String.class, null, value);
+    }
+
+    @XmlElementDecl(namespace = "http://www.webservices.names.ws/modelRequest", name = "id")
+    public JAXBElement<String> createdocument(String value) {
+        return new JAXBElement<>(_document_QNAME, String.class, null, value);
+    }
+
+}
